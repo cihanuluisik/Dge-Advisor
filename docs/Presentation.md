@@ -1,4 +1,4 @@
-# Slide 1: System and Tech Stack Overview
+# System and Tech Stack Overview
 
 ## **Key Design Decisions**
 - Local LLMs for data privacy and cost control
@@ -23,7 +23,7 @@
 
 ---
 
-# Slide 2: RAG Workflow Architecture
+# RAG Workflow Architecture
 
 ![Detailed CrewAI Architecture](diagrams/Crewai.png)
 
@@ -68,7 +68,7 @@ Vector Storage (PostgreSQL + pgvector)
 
 ---
 
-# Slide 3: Live Conversation Example
+# Live Conversation Examples
 
 ## **Accuracy Performance**
 - **Accuracy**: Hybrid search achieves 83% semantic similarity (0.830 score)
