@@ -19,7 +19,7 @@
 
 
 ---
-![Overall System Architecture](diagrams/Overall_Layers.png)
+![Overall System Architecture](diagrams/Overall_Architecture.png)
 
 ---
 
