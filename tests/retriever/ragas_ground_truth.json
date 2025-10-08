@@ -1,0 +1,135 @@
+[
+  {
+    "question": "How many Core Principles are defined and what are they?",
+    "ground_truth": "The Procurement Framework establishes ten integrated Core Principles: Ability, Accountability, Digital, Effectiveness, Excellence, Fairness, Integration, Integrity, Sustainability, and Transparency.",
+    "contexts": [
+      "y H.E. Ali Rashed Al Ketbi Chairman, Department of Government Support - Abu Dhabi 2 Abu Dhabi Procurement Standards Index Introduction to the Procurement Framework ................................ ................................ .............................. 3 Definition of the Procurement ................................ ................................ ................................ ...................... 4 Core Principles ................................ ................................ ................................ ................................ ................ 5 Code of Ethics ................................ ................................ ................................ ................................ ................. 6 Procurement Standards ................................ ................................ ................................ ..."
+    ]
+  },
+  {
+    "question": "What does the Procurement Standards say about segregation of duties in procurement operations?",
+    "ground_truth": "The Procurement shall act in line with internal controls implementing segregation of duties so that no one individual controls consecutive stages of the requisition to payment cycle.",
+    "contexts": [
+      "s The head of the Procurement of each government entity shall identify and document the roles and duties of the Procurement Practitioners ensuring compliance with the Procurement Standards. The roles must be created in alignment with the strategic, tactical and operation al processes defined by the Execution Standards . 3.6. Procurement Internal Controls The Procurement shall act in line with the internal controls implementing segregation of duties to prevent frauds and errors. No one individual shall control consecutive stages of the req uisition to payment cycle. There shall be segregation of duties between the requisition ing, contracting and ordering , receiving and paying. If separation at the level of roles is not possible then separation must be maintained at the individual level. The individual separation requires the approval of any performed activity by another individual"
+    ]
+  },
+  {
+    "question": "What is the role of the Procurement Committee in each government entity?",
+    "ground_truth": "A single Procurement Committee shall be established at each government entity to manage the scope of the Procurement and supervise its operations.",
+    "contexts": [
+      "Procurement shall be responsible for ensuring that the Procurement implements the Procurement Manual . 2.4. Quality Assurance The head of the Procurement shall prepare and maintain a quality assurance and improvement program that covers all aspects of the procurement function . 12 Abu Dhabi Procurement Standards The head of the Procurement shall obtain approval of the quality assurance and improvement program from the Procurement Committee. The quality assurance and improvement program shall assess compliance of the procurement function with the Procurement Standards , the Procurement Manual and the Code of Business Ethics. This program shall include an evaluation of the effectiveness and efficiency of the procurement function and the identification of opportunities for improvement. 2.5. Interpretation of the Procurement Standards Dedicated procurement professionals"
+    ]
+  },
+  {
+    "question": "List key items that must be included in the Procurement Management Report.",
+    "ground_truth": "The Procurement Management Report includes, at a minimum, spend by category and supplier, contracted prices, delivered savings, agreements and orders status, project procurement status, ageing of invoices, satisfaction metrics, initiative status, compliance, sole/single source awards, emergency purchases, complaints, and key management matters.",
+    "contexts": [
+      "e head of the Procurement and the Procurement Practitioners shall improve their knowledge, skills and competencies through continuing professional development , for which the head of the Procurement must ensure the allocation of a sufficient number of training hours per year , not less than minimum 40 hours per year . Section 7: Procurement Reporting 7.1. Procurem ent Management Report A The head of the Procurement shall present the Procurement Management Report of the procurement function biannualy to the Chairman of the government entity . The Procurement Management Report shall include at the minimum the following: A1. Spend value per category A2. Spend value per Supplier A3. Contracted price for goods , services and projects A4. Delivered savings against planned savings for each category validated by the Finance A5. Signed Price List Agreements, Contracts against the plan and issued"
+    ]
+  },
+  {
+    "question": "What is the stated purpose of the Procurement Manual (SAP Ariba Aligned)?",
+    "ground_truth": "The Procurement Manual provides operational procedures to the Procurement practitioners and reinforces the Procurement Standards, the Procurement Charter, and the Procurement Delegation of Authority (PDoA).",
+    "contexts": [
+      "E. Ali Rashed Al Ketbi Chairman, Department of Government Support - Abu Dhabi 2 Procurement Manual (SAP A riba Aligned ) 1. Introduction ................................ ................................ ................................ .......................... 5 1.1 Introduction to Procurement Manual ................................ ................................ ................................ ................ 5 1.1.1 Purpose of the Procurement Manual ................................ ................................ ................................ ... 5 1.1.2 Scope of the Procurement Manual ................................ ................................ ................................ ...... 5 1.1.3 Structure of the Manual ................................ ................................ ................................ ....................... 5 1.2 Procurement Operating Model ."
+    ]
+  },
+  {
+    "question": "Name three items excluded from the scope of the Procurement Manual.",
+    "ground_truth": "Examples include staff salaries and benefits; sponsorships and grants; and mandatory or regulatory fees (e.g., court fees, duties, taxes, bank fees).",
+    "contexts": [
+      ". 1.1.2 Scope of the Procurement Manual The Procurement Manual applies to all procurement activities conducted by the government Entities and the Government Procurement Office (GPO). The Executive Council (EC), or a relevant body authorised by the EC, may exclude an Entity from the application of the Procurement Manual. The Procurement Manual covers all relevant procurement processes and serves as the operational framework. 1.1.2.(I) List of Exemptions The Procurement Manual does not apply to: 1) Staff salaries and benefits. 2) Direct employment contracts or the engagement individual experts which cannot be subject to tender. 3) General and administration expenses for non -predefined technical specifications , electricity , water, utilities, accommodation rentals provided to the employees and governed by the housing policies, professional and non -professional bodies’ subscriptions,"
+    ]
+  },
+  {
+    "question": "What are the four types of capabilities in the Procurement Capability Model?",
+    "ground_truth": "The Procurement Capability Model comprises four types: Strategic, Tactical, Operational, and Support.",
+    "contexts": [
+      "............................ ................................ ................................ .......................... 7 1.2.1 Category Classification ................................ ................................ ................................ ......................... 8 1.2.2 Category Taxonomy ................................ ................................ ................................ .............................. 8 1.3 Procurement Capability Model ................................ ................................ ................................ .......................... 9 1.3.1 Strategic Procurement Capability (Level 1) ................................ ................................ ........................ 10 1.3.2 Tactical Procurement Capability (Level 1) ................................ ................................ .......................... 10 1.3.3 Operational Proc"
+    ]
+  },
+  {
+    "question": "How is Baseline Spend calculated in the Procurement Manual?",
+    "ground_truth": "Baseline Spend is calculated as: Baseline Spend = Total Volume × Baseline Unit Price.",
+    "contexts": [
+      "can be calculated after acceptance of a final, binding offer from one or more Supplier(s) and the acknowledgment of offer conditions (with written confirmation, Letter of Intent, contract amendment, etc.) . 2) Benefits implementation costs (one -time investments) are excluded from the benefits calculation . 1.4.3 Calculation Methodologies i. Baseline Spend Baseline Spend is based on two parameters and is calculated as following: Baseline Spend = Total Volume * Baseline Unit Price Total volume may be known or unknown . However, two methods can be used for calculations to estimate volume, as detailed below: Table 1.4.2 Volume Estimation Methodologies Baseline unit price may be estimated using one of the following methodologies: Method Situation Method Demand Plan Forecast Volume Forecast is known  100% of forecast volume for the specific spend area Historic forecast"
+    ]
+  },
+  {
+    "question": "What is the formula for calculating savings using the standard method?",
+    "ground_truth": "Savings = (baseline price – negotiated price) × volume.",
+    "contexts": [
+      "Savings = (baseline price – negotiated price) × volume."
+    ]
+  },
+  {
+    "question": "What weight must Abu Dhabi Local Content (ADLC) have in tender evaluations?",
+    "ground_truth": "The local content must constitute 40% of the overall score allocated to the financial/commercial evaluation.",
+    "contexts": [
+      " 12 1.4.3 Calculation Methodologies ................................ ................................ ................................ ................. 12 1.5 Legislations applicable for Procurement ................................ ................................ ................................ .......... 16 1.5.1 Abu Dhabi Local Content (ADLC) ................................ ................................ ................................ ........ 16 1.5.2 Economic Incentives for MSMEs (Micro, Small, and Medium Enterprises) ................................ ....... 16 1.5.3 Economic Incentives for Emirati Entrepreneurs ................................ ................................ ................. 17 2. Procurement Processes Groups ................................ ...."
+    ]
+  },
+  {
+    "question": "At a high level, what do procurement processes span from and to?",
+    "ground_truth": "They span from understanding requirements and evaluating the need, through identifying and analyzing supply options, up to contracting and fulfillment with ongoing supplier performance management.",
+    "contexts": [
+      "........................ 16 1.5.1 Abu Dhabi Local Content (ADLC) ................................ ................................ ................................ ........ 16 1.5.2 Economic Incentives for MSMEs (Micro, Small, and Medium Enterprises) ................................ ....... 16 1.5.3 Economic Incentives for Emirati Entrepreneurs ................................ ................................ ................. 17 2. Procurement Processes Groups ................................ ................................ ............................ 18 2.1 Procurement Strategy ................................ ................................ ................................ ........................... 18 2.1.1 Overview ................................ ................................ ................................ ................................ ............. 18 2.1.2 Details"
+    ]
+  },
+  {
+    "question": "What is the Decision number and year issuing the implementing regulation of Law No. 6 of 2016?",
+    "ground_truth": "Decision No. (10) of 2020 issues the implementing regulation of Law No. 6 of 2016 concerning human resources in the Emirate of Abu Dhabi and its amendments.",
+    "contexts": [
+      "Decision No. (10) of 2020 issues the implementing regulation of Law No. 6 of 2016 concerning human resources in the Emirate of Abu Dhabi and its amendments."
+    ]
+  },
+  {
+    "question": "Who does the HR Implementing Regulation apply to?",
+    "ground_truth": "The regulation applies to all civilian personnel below the executive management working in government authorities in the Emirate of Abu Dhabi.",
+    "contexts": [
+      "as of the date of its issuance and shall be published in the Official Gazette. Ali Rashed Al -Ketbi Chairman of Department of Government Support It was issued by us on 5/April/2020 1 Implementing Regulation Law No. (6) of 2016 concerning human resources in the Emirate of Abu Dhabi and its amendments 2 Chapter 1 Definitions, scope of application, and delegation of powers Article ( 1) Definitions In applying the provisions of this regulation the following words and expressions shall have the meanings indicated in front each of them, unless the context indicates otherwise: Country : United Arab Emirates. Emirate : Emirate of Abu Dhabi. Government: : Government of Abu Dhabi Executive Council : Executive Council of the Emirate. Authority : Abu Dhabi Human Resour"
+    ]
+  },
+  {
+    "question": "What is the standard probationary period under the HR Bylaws and can it be extended?",
+    "ground_truth": "The probationary period is three months from the date of taking up work, extendable for another similar period.",
+    "contexts": [
+      "ernment authorities shall be rectified prior to the enforcement of the present Regulation in accordance with the provisions applicab le thereto and set out in this Regulation. Article ( 19) Subscription to the Retirement System The government authority shall commit to register the citizen employee in the retirement system, and to pay the prescribed subscriptions in accordance with the legislation in force in the Emirate. Article ( 20) Probationary Period 1. The employee appointed by the government authority shall be subject to a probationary period of three months starting from the date they take over the work, and it may be extended fo r another similar period from the date they take over the work. 2. The line officer shall carry out accurate follow -up to evaluate the employee’s job performance and behaviour according to clear bases during the probationary period, in accordance with th"
+    ]
+  },
+  {
+    "question": "What is the order of priority for filling vacant positions in a government authority?",
+    "ground_truth": "Priority is: (1) a citizen employee of the same government authority; (2) a citizen candidate from outside who has completed national service or has a status certificate; (3) other citizen candidates.",
+    "contexts": [
+      "t the registry of the Government Authority after changing their nationality, acquiring another nationality or changing their residence after appointment, unless approved by the head of the Government Authority. 3. The approved domicil e for eligible non -citizen family members shall be the same domicile approved in the records of the government authority, regardless of their nationalities or actual place of residence. 15 Article ( 13) Priority for Vacant Positions The order of priority for v acant positions in the Government Authority shall be as follows: 1. A citizen employee of the same Government Authority who meets the conditions and requirements of the job. 2. A citizen candidate from outside the Government Authority who has completed national service or submitted a certificate indicating his relevant status (if the candidate had to enlist in national service or if he has been exempted from"
+    ]
+  },
+  {
+    "question": "What is the purpose of the UAE IA Standards?",
+    "ground_truth": "The UAE IA Standards provide requirements to raise the minimum level of protection of information assets and supporting systems across implementing entities in the UAE.",
+    "contexts": [
+      "1NESA UAE INFORMA TION ASSURANCE ST ANDARDS THE SUPREME COUNCIL F OR NA TIONAL SECURITY 3 4ONTENT 5 FOREWORD 4 1 INTRODUCTION 5 1.1 Background 5 1.2 Purpose of the UAE IA Standards 6 1.3 Layout of the UAE IA Standards 7 2 UAE IA ST ANDARDS OVERVIEW 9 2.1 Scope 9 2.2 Related NESA Documents 9 2.3 Entity, Sector , and National Contexts 10 2.4 Information Assurance Lifecycle 11 3 UAE IA ST ANDARDS IMPLEMENT A TION 12 3.1 Overview 12 3.2 Risk-Based Approach 12 3.3 Applicability of Controls 15 3.4 Prioritization of Controls 16 3.5 Key Stakeholders Roles and Responsibilities 17 3.6 Key Success Factors 19 4 COMPLIAN CE WITH THE U"
+    ]
+  },
+  {
+    "question": "What are 'Always Applicable' controls under the UAE IA Standards?",
+    "ground_truth": "Certain security controls are considered “Always Applicable” and must be implemented by each relevant entity regardless of risk assessment outcomes.",
+    "contexts": [
+      "mpliance 64 M6 Performance Evaluation and Improvement 74 5.4 T echnical Controls 79 T1 Asset Management 79 T2 Physical and Environmental Security 88 T3 Operations Management 99 T4 Communications 113 T5 Access Control 127 T6 Third-Party Security 145 T7 Information Systems Acquisition, Development and Maintenance 150 T8 Information Security Incident Management 170 T9 Information Systems Continuity Management 180 ANNEX Annex A Summary of Always Applicable Controls 186 Annex B Summary of the Prioritized Controls 189 Annex C Mapping of Controls against Leading Standards 195 Annex D Mapping of Threats to Controls 215 Annex E Sector and National Level Controls 219 Annex F Terms and Definitions 221 Annex G Bibliography 226 APPENDICES Appendices Sector-Specific Standards 227 6 7FOREWORD The increased adoption of Information T echnology (IT), electronic communications, and cyberspace – comprising a"
+    ]
+  },
+  {
+    "question": "How are security controls prioritized in the UAE IA Standards?",
+    "ground_truth": "Security controls are grouped into four priority levels—P1, P2, P3, and P4—with P1 having the highest relative impact and, if applicable, may be augmented but not reduced.",
+    "contexts": [
+      "REME COUNCIL F OR NA TIONAL SECURITY 3 4ONTENT 5 FOREWORD 4 1 INTRODUCTION 5 1.1 Background 5 1.2 Purpose of the UAE IA Standards 6 1.3 Layout of the UAE IA Standards 7 2 UAE IA ST ANDARDS OVERVIEW 9 2.1 Scope 9 2.2 Related NESA Documents 9 2.3 Entity, Sector , and National Contexts 10 2.4 Information Assurance Lifecycle 11 3 UAE IA ST ANDARDS IMPLEMENT A TION 12 3.1 Overview 12 3.2 Risk-Based Approach 12 3.3 Applicability of Controls 15 3.4 Prioritization of Controls 16 3.5 Key Stakeholders Roles and Responsibilities 17 3.6 Key Success Factors 19 4 COMPLIAN CE WITH THE UAE IA ST ANDARDS 21 5 SECURITY CONTROLS 23 5.1 Control Structure 23 5.2 Description of families of controls 24 5.3 Management Controls 26 M1 Strategy and Planning 26 M2 Information Security Risk Management 40 M3 Awareness and T raining 52 M4 Human Resources Security 58 M5 Compliance 64 M6 Performance Evaluation and Improvement 74 5.4 T"
+    ]
+  },
+  {
+    "question": "Name the key activities in the risk-based approach outlined by the UAE IA Standards.",
+    "ground_truth": "The risk-based approach includes establishing context, risk identification, risk estimation, risk evaluation, risk treatment, risk acceptance, risk monitoring and review, and risk communication and consultation.",
+    "contexts": [
+      "1NESA UAE INFORMA TION ASSURANCE ST ANDARDS THE SUPREME COUNCIL F OR NA TIONAL SECURITY 3 4ONTENT 5 FOREWORD 4 1 INTRODUCTION 5 1.1 Background 5 1.2 Purpose of the UAE IA Standards 6 1.3 Layout of the UAE IA Standards 7 2 UAE IA ST ANDARDS OVERVIEW 9 2.1 Scope 9 2.2 Related NESA Documents 9 2.3 Entity, Sector , and National Contexts 10 2.4 Information Assurance Lifecycle 11 3 UAE IA ST ANDARDS IMPLEMENT A TION 12 3.1 Overview 12 3.2 Risk-Based Approach 12 3.3 Applicability of Controls 15 3.4 Prioritization of Controls 16 3.5 Key Stakeholders Roles and Responsibilities 17 3.6 Key Success Factors 19 4 COMPLIAN CE WITH THE UAE IA ST ANDARDS 21 5 SECURITY CONTROLS 23 5.1 Control Structure 23 5.2 Description of families of controls 24 5.3 Management Controls 26 M1 Strategy and Planning 26 M2 Information Security Risk Management 40 M3 Awareness and T raining 52 M4 Human Resources Security 58 M"
+    ]
+  }
+]

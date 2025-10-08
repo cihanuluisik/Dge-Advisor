@@ -1,0 +1,104 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: dge1-rag-postgres
+    environment:
+      POSTGRES_USER: ${DUSER:-user}
+      POSTGRES_PASSWORD: ${DPASSWORD:-password}
+      POSTGRES_DB: ${DNAME:-ragdb}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/db-data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    container_name: dge1-rag-phoenix
+    environment:
+      - PHOENIX_HOST=0.0.0.0
+      - PHOENIX_PORT=6006
+    ports:
+      - "6006:6006"
+    volumes:
+      - ./data/phoenix:/app/data
+
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:latest
+    container_name: dge1-rag-openwebui
+    environment:
+      - OPENAI_API_BASE_URL=http://rag-api:8008/v1
+      - OPENAI_API_KEY=dummy-key
+      - AIOHTTP_CLIENT_TIMEOUT=600
+      - USER_PERMISSIONS_WORKSPACE_MODELS_ACCESS=true
+      - DEFAULT_USER_ROLE=admin
+      - ENABLE_SIGNUP=true
+      - ENABLE_OPENAI_API=true
+      - ENABLE_EXTERNAL_MODELS=true
+      - SHOW_EXTERNAL_MODELS=true
+      - ENABLE_MESSAGE_RATING=true
+      - ENABLE_COMMUNITY_SHARING=false
+      - WEBUI_NAME=DGE Policy RAG
+      - WEBUI_URL=http://localhost:3000
+      - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY:-secret-key-change-me}
+      - DATA_DIR=/app/backend/data
+      - LOG_LEVEL=INFO
+
+    ports:
+      - "3000:8080"
+    volumes:
+      - ./data/openwebui:/app/backend/data
+    depends_on:
+      - rag-api
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  rag-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: dge1-rag-api
+    environment:
+      - RAG_API_PORT=8008
+      - LLM_MODEL=gemma3:12b
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - DHOST=postgres
+      - DPORT=5432
+      - DUSER=${POSTGRES_USER:-user}
+      - DPASSWORD=${POSTGRES_PASSWORD:-password}
+      - DNAME=${POSTGRES_DB:-ragdb}
+      - EMBEDDING_MODEL=granite-embedding:30m
+      - EMBEDDING_MODEL_DIM=384
+      - OPENAI_API_KEY=dummy-key
+      - PHOENIX_HOST=phoenix
+      - PHOENIX_PORT=6006
+    ports:
+      - "8008:8008"
+    volumes:
+      - ../data:/app/data/documents
+    depends_on:
+      - postgres
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: dge1-rag-pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@dge1.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_CONFIG_SERVER_MODE=False
+      - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
+    ports:
+      - "5050:80"
+    volumes:
+      - ./data/pgadmin:/var/lib/pgadmin
+      - ./scripts/pgadmin-servers.json:/var/lib/pgadmin/servers.json
+    depends_on:
+      - postgres

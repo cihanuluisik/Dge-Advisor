@@ -1,0 +1,60 @@
+guardrail_task:
+  description: >
+    Check if this query is safe and appropriate: "{query}"
+    
+    Review the query against your list of blocked topics.
+    Respond with ONLY:
+    - "VALID" if the query is appropriate
+    - "BLOCKED: Query contains inappropriate content about [topic]" if it violates any rule
+  expected_output: >
+    Either "VALID" or "BLOCKED: Query contains inappropriate content about [topic]"
+  agent: guardrail_agent
+  async_execution: true
+
+memorized_task:
+  description: >
+    Answer the query: {query}
+    Chat ID: {chat_id}
+    
+    IMPORTANT: When using the retriever_reranker tool, formulate a complete search query that includes:
+    1. The current query
+    2. Any relevant context from previous conversation (e.g., if user says "explain article 3" 
+       after discussing "code of business ethics", search for "article 3 code of business ethics")
+    
+    The retriever_reranker will automatically access conversation history, so make sure your
+    search query is complete and contextual. Then provide a complete answer with document references.
+    End with "Sources:" section.
+  expected_output: >
+    Complete answer with integrated citations and Sources section.
+  agent: memorized_agent
+  async_execution: true
+
+llm_task:
+  description: >
+    Query: {query}
+    
+    STEP 1 - CHECK GUARDRAIL:
+    Look at the guardrail_task result. It will be EXACTLY "VALID" or start with "BLOCKED:".
+    - If "VALID": Proceed to Step 2
+    - If starts with "BLOCKED:": Respond ONLY with: "I apologize, but I cannot process queries 
+      related to that topic. Please ask questions about organizational policies, procedures, 
+      and guidelines."
+    
+    STEP 2 - ANSWER THE QUERY:
+    Using the documents retrieved in memorized_task, construct a fully self-contained answer.
+    - Use ONLY the provided documents - no external knowledge
+    - Reference conversation history only when it enhances clarity
+    - Embed document names and page references smoothly throughout your explanation
+    - If exact content is not available, explain what related content you found
+    - Scale your response: succinct for simple queries, comprehensive for complex ones
+    - End with a "Sources:" section listing all cited materials with page numbers
+    - Deliver everything in ONE complete response.
+  expected_output: >
+    If blocked: Kind rejection message. Otherwise: Single, complete answer featuring immediate response 
+    to the query; seamlessly integrated source references; format suited to content (prose, bullets, or 
+    numbered items); concluding "Sources:" inventory with document names and pages; professional yet 
+    accessible language throughout.
+  agent: llm_agent
+  context:
+    - guardrail_task
+    - memorized_task

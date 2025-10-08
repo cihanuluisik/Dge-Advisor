@@ -1,0 +1,72 @@
+graph TB
+    %% Input
+    Input[User Query<br/>+ Chat ID] --> BeforeHook
+
+    %% Orchestration Layer
+    subgraph Orchestration[CrewAI Orchestration Layer]
+        BeforeHook["@before_kickoff<br/>Store User Message"]
+        
+        subgraph AgentPipeline[Agent Pipeline - Parallel Execution]
+            GuardrailAgent[Guardrail Agent<br/>Query Validation]
+            MemorizedAgent[Memorized Agent<br/>RAG + History]
+        end
+        
+        LLMAgent[LLM Agent<br/>Answer Generation]
+        
+        AfterHook["@after_kickoff<br/>Store Assistant Response"]
+        
+        BeforeHook --> AgentPipeline
+        AgentPipeline --> LLMAgent
+        LLMAgent --> AfterHook
+    end
+
+    %% Tools Layer
+    subgraph Tools[Tools Layer]
+        ConversationTool[Conversation Tool<br/>Chat History Manager]
+        RetrieverTool[Retriever + Reranker Tool<br/>Hybrid Search]
+    end
+
+    %% External Services
+    subgraph External[External Services]
+        Phoenix[Phoenix Tracing<br/>Observability]
+        Ollama[Ollama Server<br/>LLM + Embeddings]
+    end
+
+    %% Data Layer (minimal)
+    subgraph Data[Data Layer - PostgreSQL]
+        ChatHistory[(Chat History<br/>Conversations)]
+        VectorStore[(Vector Store<br/>pgvector + HNSW Index)]
+    end
+
+    %% Connections
+    MemorizedAgent -.uses.-> RetrieverTool
+    MemorizedAgent -.uses.-> ConversationTool
+    LLMAgent -.uses.-> ConversationTool
+    
+    BeforeHook -.stores.-> ConversationTool
+    AfterHook -.stores.-> ConversationTool
+    
+    RetrieverTool -.queries.-> VectorStore
+    ConversationTool -.reads/writes.-> ChatHistory
+    
+    Orchestration -.traces.-> Phoenix
+    LLMAgent -.queries.-> Ollama
+    RetrieverTool -.uses.-> Ollama
+    
+    AfterHook --> Output[Final Answer<br/>+ Sources]
+
+    %% Styling
+    classDef orchestrationStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+    classDef agentStyle fill:#f9d5e5,stroke:#c2185b,stroke-width:2px
+    classDef hookStyle fill:#d1c4e9,stroke:#512da8,stroke-width:2px
+    classDef toolStyle fill:#ffe4e1,stroke:#d32f2f,stroke-width:2px
+    classDef externalStyle fill:#e0f7fa,stroke:#0097a7,stroke-width:2px
+    classDef dataStyle fill:#c8e6c9,stroke:#388e3c,stroke-width:2px
+    
+    class Orchestration,AgentPipeline orchestrationStyle
+    class GuardrailAgent,MemorizedAgent,LLMAgent agentStyle
+    class BeforeHook,AfterHook hookStyle
+    class Tools,ConversationTool,RetrieverTool toolStyle
+    class External,Phoenix,Ollama externalStyle
+    class Data,ChatHistory,VectorStore dataStyle
+

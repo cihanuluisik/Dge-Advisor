@@ -1,0 +1,118 @@
+[
+  {
+    "conversation_id": "procurement_basics",
+    "turns": [
+      {
+        "turn": 1,
+        "question": "What are the Core Principles of procurement?",
+        "ground_truth": "The Procurement Framework establishes ten integrated Core Principles: Ability, Accountability, Digital, Effectiveness, Excellence, Fairness, Integration, Integrity, Sustainability, and Transparency.",
+        "contexts": [
+          "The Procurement Framework establishes ten integrated Core Principles: Ability, Accountability, Digital, Effectiveness, Excellence, Fairness, Integration, Integrity, Sustainability, and Transparency."
+        ]
+      },
+      {
+        "turn": 2,
+        "question": "What about segregation of duties?",
+        "ground_truth": "The Procurement shall act in line with internal controls implementing segregation of duties so that no one individual controls consecutive stages of the requisition to payment cycle.",
+        "contexts": [
+          "The Procurement shall act in line with the internal controls implementing segregation of duties to prevent frauds and errors. No one individual shall control consecutive stages of the requisition to payment cycle."
+        ]
+      },
+      {
+        "turn": 3,
+        "question": "And what about the Procurement Committee?",
+        "ground_truth": "A single Procurement Committee shall be established at each government entity to manage the scope of the Procurement and supervise its operations.",
+        "contexts": [
+          "A single Procurement Committee shall be established at each government entity to manage the scope of the Procurement and supervise its operations."
+        ]
+      }
+    ]
+  },
+  {
+    "conversation_id": "hr_policies",
+    "turns": [
+      {
+        "turn": 1,
+        "question": "What is the probationary period for new employees?",
+        "ground_truth": "The probationary period is three months from the date of taking up work, extendable for another similar period.",
+        "contexts": [
+          "The employee appointed by the government authority shall be subject to a probationary period of three months starting from the date they take over the work, and it may be extended for another similar period."
+        ]
+      },
+      {
+        "turn": 2,
+        "question": "Can it be extended?",
+        "ground_truth": "Yes, the probationary period may be extended for another similar period (another three months).",
+        "contexts": [
+          "The probationary period is three months from the date of taking up work, extendable for another similar period."
+        ]
+      },
+      {
+        "turn": 3,
+        "question": "What about priority for vacant positions?",
+        "ground_truth": "Priority is: (1) a citizen employee of the same government authority; (2) a citizen candidate from outside who has completed national service or has a status certificate; (3) other citizen candidates.",
+        "contexts": [
+          "The order of priority for vacant positions in the Government Authority shall be as follows: 1. A citizen employee of the same Government Authority who meets the conditions and requirements of the job. 2. A citizen candidate from outside the Government Authority who has completed national service or submitted a certificate indicating his relevant status."
+        ]
+      }
+    ]
+  },
+  {
+    "conversation_id": "security_standards",
+    "turns": [
+      {
+        "turn": 1,
+        "question": "What is the purpose of UAE IA Standards?",
+        "ground_truth": "The UAE IA Standards provide requirements to raise the minimum level of protection of information assets and supporting systems across implementing entities in the UAE.",
+        "contexts": [
+          "The UAE IA Standards provide requirements to raise the minimum level of protection of information assets and supporting systems across implementing entities in the UAE."
+        ]
+      },
+      {
+        "turn": 2,
+        "question": "What are Always Applicable controls?",
+        "ground_truth": "Certain security controls are considered \"Always Applicable\" and must be implemented by each relevant entity regardless of risk assessment outcomes.",
+        "contexts": [
+          "Certain security controls are considered \"Always Applicable\" and must be implemented by each relevant entity regardless of risk assessment outcomes."
+        ]
+      },
+      {
+        "turn": 3,
+        "question": "How are controls prioritized?",
+        "ground_truth": "Security controls are grouped into four priority levels—P1, P2, P3, and P4—with P1 having the highest relative impact and, if applicable, may be augmented but not reduced.",
+        "contexts": [
+          "Security controls are grouped into four priority levels—P1, P2, P3, and P4—with P1 having the highest relative impact and, if applicable, may be augmented but not reduced."
+        ]
+      }
+    ]
+  },
+  {
+    "conversation_id": "procurement_calculations",
+    "turns": [
+      {
+        "turn": 1,
+        "question": "How is Baseline Spend calculated?",
+        "ground_truth": "Baseline Spend is calculated as: Baseline Spend = Total Volume × Baseline Unit Price.",
+        "contexts": [
+          "Baseline Spend is based on two parameters and is calculated as following: Baseline Spend = Total Volume * Baseline Unit Price"
+        ]
+      },
+      {
+        "turn": 2,
+        "question": "What about savings calculation?",
+        "ground_truth": "Savings = (baseline price – negotiated price) × volume.",
+        "contexts": [
+          "Savings = (baseline price – negotiated price) × volume."
+        ]
+      },
+      {
+        "turn": 3,
+        "question": "What weight must Abu Dhabi Local Content have?",
+        "ground_truth": "The local content must constitute 40% of the overall score allocated to the financial/commercial evaluation.",
+        "contexts": [
+          "The local content must constitute 40% of the overall score allocated to the financial/commercial evaluation."
+        ]
+      }
+    ]
+  }
+]

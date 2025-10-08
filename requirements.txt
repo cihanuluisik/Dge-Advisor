@@ -1,0 +1,44 @@
+# Core LlamaIndex Framework
+llama-index
+
+# LlamaIndex Components - LLMs and Embeddings
+llama-index-llms-ollama
+llama-index-embeddings-ollama
+
+# LlamaIndex Components - Data Readers and Retrievers
+llama-index-readers-docling
+llama-index-retrievers-bm25
+
+# LlamaIndex Components - Storage and Vector Stores
+llama-index-vector-stores-postgres
+llama-index-storage-docstore-postgres
+
+# Database and Storage
+psycopg2-binary
+
+# Document Processing and NLP
+docling-ibm-models[mlx]
+sentencepiece
+
+# Retrieval and Search
+rank_bm25
+
+# AI Agents and Workflows
+crewai
+crewai-tools
+
+# Evaluation and Metrics
+ragas
+datasets
+
+# Web Framework and API
+fastapi
+uvicorn
+
+# Configuration and Environment
+python-dotenv
+
+# Monitoring and Instrumentation
+arize-phoenix-otel
+openinference-instrumentation-crewai
+openinference-instrumentation-litellm

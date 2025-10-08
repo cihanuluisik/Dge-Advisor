@@ -1,0 +1,62 @@
+graph LR
+    %% Main Flow
+    User[User Query<br/>+ Chat ID] --> PreProcessing["@before_kickoff<br/>Extract Context"]
+    
+    PreProcessing --> Agents
+    
+    %% Agent Flow - Parallel then Sequential
+    subgraph Agents[AI Agent Pipeline]
+        direction TB
+        subgraph Parallel[Parallel Processing]
+            G[Guardrail Agent<br/>Validate Query]
+            M[Memorized Agent<br/>Search Docs + History]
+        end
+        L[LLM Agent<br/>Generate Answer]
+        Parallel --> L
+    end
+    
+    Agents --> PostProcessing["@after_kickoff<br/>Store Response"]
+    
+    PostProcessing --> Response[Final Answer<br/>+ Sources]
+    
+    %% Tools
+    subgraph Tools[Agent Tools]
+        RRT[Retriever + Reranker<br/>Hybrid Search]
+        CT[Conversation Tool<br/>Chat History]
+    end
+    
+    M -.uses.-> RRT
+    M -.uses.-> CT
+    PostProcessing -.stores.-> CT
+    
+    %% Storage
+    subgraph Storage[Persistent Storage]
+        VDB[(Vector DB<br/>Documents)]
+        CDB[(Chat DB<br/>Conversations)]
+    end
+    
+    RRT -.queries.-> VDB
+    CT -.reads/writes.-> CDB
+    
+    %% Memory
+    subgraph Memory[CrewAI Memory]
+        STM[Short-term]
+        LTM[Long-term]
+        EM[Entity]
+    end
+    
+    Agents -.context.-> Memory
+    
+    %% Styling
+    classDef agentStyle fill:#f9d5e5,stroke:#333,stroke-width:2px
+    classDef toolStyle fill:#ffe4e1,stroke:#333,stroke-width:2px
+    classDef storageStyle fill:#c8e6c9,stroke:#333,stroke-width:2px
+    classDef memoryStyle fill:#fff9c4,stroke:#333,stroke-width:2px
+    classDef hookStyle fill:#d1c4e9,stroke:#333,stroke-width:2px
+    
+    class Agents,G,M,L agentStyle
+    class Tools,RRT,CT toolStyle
+    class Storage,VDB,CDB storageStyle
+    class Memory,STM,LTM,EM memoryStyle
+    class PreProcessing,PostProcessing hookStyle
+

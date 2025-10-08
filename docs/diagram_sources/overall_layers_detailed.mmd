@@ -1,0 +1,114 @@
+graph TB
+    %% Client Layer
+    subgraph Client[Client Layer]
+        User[User/Application<br/>OpenAI Compatible API]
+    end
+    
+    %% API Layer
+    subgraph API[API Layer - FastAPI]
+        Endpoint["/v1/chat/completions"<br/>OpenAI Compatible]
+        SessionMgr[Session Manager<br/>Cookie/Chat ID]
+    end
+    
+    %% Orchestration Layer
+    subgraph Orchestration[Orchestration Layer - CrewAI]
+        direction TB
+        PreHook["@before_kickoff<br/>Store User Message"]
+        
+        subgraph AgentPipeline[Agent Pipeline]
+            direction LR
+            subgraph ParallelAgents[Parallel Execution]
+                GA[Guardrail Agent<br/>Query Validation]
+                MA[Memorized Agent<br/>RAG + History]
+            end
+            LLMA[LLM Agent<br/>Answer Generation]
+            ParallelAgents --> LLMA
+        end
+        
+        PostHook["@after_kickoff<br/>Store Assistant Response"]
+        PreHook --> AgentPipeline
+        AgentPipeline --> PostHook
+    end
+    
+    %% Tools Layer
+    subgraph Tools[Tools Layer]
+        RRT[Retriever + Reranker Tool<br/>Hybrid Search]
+        CT[Conversation Tool<br/>Chat History Manager]
+    end
+    
+    %% RAG Layer
+    subgraph RAG[RAG Layer - LlamaIndex]
+        direction TB
+        VectorSearch[Vector Store Index<br/>Hybrid Search]
+        Reranker[Reranker<br/>BGE Model]
+    end
+    
+    %% Data Layer
+    subgraph DataLayer[Data Layer - PostgreSQL]
+        VectorDB[(Vector Store<br/>pgvector<br/>HNSW Index)]
+        ChatDB[(Chat History<br/>Conversations)]
+    end
+    
+    %% External Services
+    subgraph External[External Services]
+        Ollama[Ollama Server<br/>LLM + Embeddings]
+        Phoenix[Phoenix Tracing<br/>Observability]
+    end
+    
+    %% Ingestion Pipeline
+    subgraph Ingestion[Data Ingestion Pipeline]
+        direction LR
+        DocLoader[Document Loader<br/>PDF/MD Files]
+        Parser[Markdown Parser<br/>Token Splitter 1000/200]
+        Embedder[Embedding Model<br/>Ollama]
+        DocLoader --> Parser --> Embedder
+    end
+    
+    %% Flow Connections
+    User --> Endpoint
+    Endpoint --> SessionMgr
+    SessionMgr --> PreHook
+    
+    MA -.uses.-> RRT
+    MA -.uses.-> CT
+    PreHook -.stores.-> CT
+    PostHook -.stores.-> CT
+    
+    RRT --> VectorSearch
+    RRT --> Reranker
+    CT --> ChatDB
+    
+    VectorSearch --> VectorDB
+    
+    GA -.uses.-> Ollama
+    LLMA -.uses.-> Ollama
+    Embedder --> VectorDB
+    Embedder -.queries.-> Ollama
+    
+    PostHook --> Endpoint
+    Endpoint --> User
+    
+    API -.traces.-> Phoenix
+    Orchestration -.traces.-> Phoenix
+    
+    %% Styling
+    classDef clientStyle fill:#e1f5ff,stroke:#333,stroke-width:3px
+    classDef apiStyle fill:#fff4e1,stroke:#333,stroke-width:3px
+    classDef orchestrationStyle fill:#f9d5e5,stroke:#333,stroke-width:3px
+    classDef toolStyle fill:#ffe4e1,stroke:#333,stroke-width:2px
+    classDef ragStyle fill:#e8f5e9,stroke:#333,stroke-width:2px
+    classDef dataStyle fill:#c8e6c9,stroke:#333,stroke-width:3px
+    classDef externalStyle fill:#e0e0e0,stroke:#333,stroke-width:2px
+    classDef ingestionStyle fill:#fff9c4,stroke:#333,stroke-width:2px
+    classDef hookStyle fill:#d1c4e9,stroke:#333,stroke-width:2px
+    
+    class Client,User clientStyle
+    class API,Endpoint,SessionMgr apiStyle
+    class Orchestration,AgentPipeline,ParallelAgents,GA,MA,LLMA orchestrationStyle
+    class PreHook,PostHook hookStyle
+    class Tools,RRT,CT toolStyle
+    class RAG,HRetriever,VectorSearch,Reranker ragStyle
+    class DataLayer,VectorDB,Docstore,ChatDB dataStyle
+    class External,Ollama,Phoenix externalStyle
+    class Ingestion,DocLoader,Parser,Embedder ingestionStyle
+
