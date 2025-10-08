@@ -75,6 +75,17 @@ Vector Storage (PostgreSQL + pgvector)
 - **Quality**: 68.4% of responses score ≥0.8 (high quality)
 
 
-![Conversation Example](diagrams/Conversation_example.png)
+## Example 1: Employee Probation Period Query
+![Conversation Example 1](diagrams/Conversation_example1.png)
+
+---
+
+## Example 2: Guardrail Protection - Inappropriate Content
+![Conversation Example 2](diagrams/Conversation_example2.png)
+
+---
+
+## Example 3: Multi-turn Conversation with Context
+![Conversation Example 3](diagrams/Conversation_example3.png)
 
 
