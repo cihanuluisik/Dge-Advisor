@@ -29,17 +29,8 @@
 
 
 ## **Ingestion Workflow**
-```
-Policy Docs (PDF/DOCX/MD)
-    ↓
-Document Loading & Parsing
-    ↓
-Text Chunking (1000 tokens, 100 overlap)
-    ↓
-Embedding Generation (Granite 384-dim)
-    ↓
-Vector Storage (PostgreSQL + pgvector)
-```
+
+![Ingestion Workflow](diagrams/ingestion_workflow.png)
 
 ## **Query Processing Flow**
 
