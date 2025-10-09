@@ -1,4 +1,4 @@
-flowchart LR
+flowchart TD
     A[Policy Documents<br/>PDF/DOCX/MD] --> B[Document Loading<br/>& Parsing]
     B --> C[Text Chunking<br/>1000 tokens, 100 overlap]
     C --> D[Embedding Generation<br/>Granite 384-dim]
